@@ -2,7 +2,7 @@
   "name": "@homebridge-plugins/homebridge-smarthq",
   "displayName": "SmartHQ",
   "type": "module",
-  "version": "0.4.14",
+  "version": "0.4.15",
   "description": "The SmartHQ plugin allows you to interact with SmartHQ Devices in HomeKit and with Siri.",
   "author": {
     "name": "donavanbecker",
@@ -47,6 +47,7 @@
     "watch": "npm run build && npm run plugin-ui && npm link && nodemon",
     "plugin-ui": "rsync ./src/homebridge-ui/public/index.html ./dist/homebridge-ui/public/",
     "build": "npm run clean && tsc && tsc-alias && npm run plugin-ui",
+    "prepare": "npm run build",
     "prepublishOnly": "npm run lint && npm run build && npm run plugin-ui && npm run docs && npm run docs:lint",
     "postpublish": "npm run clean",
     "clean": "shx rm -rf ./dist",
@@ -67,6 +68,7 @@
     "lodash": "^4.17.21",
     "openid-client": "^5.7.0",
     "rxjs": "^7.8.2",
+    "shx": "^0.4.0",
     "tough-cookie": "^6.0.0",
     "ws": "^8.19.0"
   },
@@ -80,7 +82,6 @@
     "eslint-plugin-import": "^2.32.0",
     "homebridge": "^1.11.1",
     "nodemon": "^3.1.10",
-    "shx": "^0.4.0",
     "tsc-alias": "^1.8.16",
     "typedoc": "^0.28.16",
     "typescript": "^5.9.2",
